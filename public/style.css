@@ -50,7 +50,8 @@ table{
 body {
   background-color: #032b35;
   color: #849492;
-  font-family: 'Inconsolata', sans-serif;
+  font-family: 'Inconsolata', monospace;
+  overflow-x: hidden;
 }
 .container {
   margin: 0 2rem;
@@ -60,23 +61,21 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 3rem 0;
+  color: #fff;
 }
 .main {
   display: grid;
-  grid-template-columns: 20rem auto;
+  grid-template-columns: 17rem auto;
   grid-column-gap: 2rem;
 }
 .main .nav {
   position: sticky;
-  top: 1rem;
+  top: 2rem;
 }
 .main .nav .inner {
   border: 1px dashed #849492;
-  padding: 1rem;
 }
 .main .content {
-  height: 1000rem;
-  overflow: hidden;
 }
 .nav a,
 .content a {
@@ -84,12 +83,52 @@ body {
   text-decoration: none;
 }
 .nav a {
-  display: inline-block;
-  margin-bottom: .3rem;
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  padding: 0.5rem 1rem;
 }
-
-pre,
-pre code{
-  width: 100%;
-  overflow: hidden;
+.nav a:hover {
+  color: #bbb;
+}
+.nav li:first-child a {
+  padding-top: 1rem;
+}
+.nav li:last-child a {
+  padding-bottom: 1rem;
+}
+.content p,
+.content pre,
+.content h2,
+.content h3 {
+  margin-bottom: 2rem;
+}
+.content pre {
+  white-space: pre-wrap;
+  line-height: 1.5rem;
+}
+.content h2,
+.content h3 {
+  font-weight: bold;
+  margin-top: -2rem;
+  padding-top: 2rem;
+}
+.content h2 {
+  font-size: 1.7rem;
+  color: #ddd;
+}
+.content h3 {
+  font-size: 1.4rem;
+  color: #bbb;
+}
+.content p,
+.nav a,
+.content pre {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+.content p {
+}
+.content p:first-of-type {
+  margin-top: 3rem;
 }

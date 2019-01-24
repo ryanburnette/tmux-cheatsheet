@@ -1,7 +1,15 @@
-This is my [tmux]() cheatsheet with the most commonly used commands. I refer to
-other cheatsheets often and those are linked at the bottom.
+Hi. I'm Ryan Burnette, and I use tmux in my web development stack. This is my
+cheatsheet containing the commands and options that I use most frequently. I
+refer to other cheatsheets often and those are linked at the bottom.
+
+## What Is tmux?
+
+Tmux is a terminal multiplexer. For those familiar with screen, tmux starts
+with that basic functionality and builds upon it.
 
 ## Managing Sessions
+
+Instances of tmux are referred to as sessions.
 
 ### New Session
 
@@ -35,13 +43,23 @@ Note that tab completion works with tmux commands. When used in conjuction with 
 
 TODO
 
-## Tabs
+## Windows
 
-A tmux session is made up of one or more tabs.
+A tmux session is made up of one or more windows, sometimes referred to as tabs.
+
+### Create Window
+
+```bash
+<ctrl> c
+```
+
+### List Windows
+
+```bash
+<ctrl> w
+```
 
 ```
-c  create window
-w  list windows
 n  next window
 p  previous window
 f  find window
@@ -71,17 +89,17 @@ x  kill pane
 
 ## Pairing
 
-I use tmux as a tool for pairing with other developers.
+Tmux is a great tool for pairing between two developers who are in different
+locations. Let's consider two developers, one who will be the host, the other
+will be the remote. The host is running a command line environment with tmux on
+their workstation, the remote developer is able to log in to the host
+developer's workstation via SSH.
+
+The host developer creates a special tmux session in the following way.
+
+The remote developer connects to the host developer's workstation using SSH,
+then runs the following command on the host developer's machine to join.
+
+## Tmuxinator
 
 TODO
-
-## tmuxinator
-
-TODO
-
-## References
-
-TODO
-
-[1]: https://gist.github.com/MohamedAlaa/2961058
-[2]: https://hackernoon.com/a-gentle-introduction-to-tmux-8d784c404340
