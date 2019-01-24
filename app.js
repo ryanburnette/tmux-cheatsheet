@@ -24,22 +24,18 @@ app.get(['/','/index.html'],function (req,res) {
 });
 
 if (process.env.NODE_ENV === 'production') {
-  // serving production assets
   app.use('/style.css',express.static('./public/style.css'));
   app.use('/script.js',express.static('./public/script.js'));
 }
 else {
-  // serving development assets
-  // var httpProxy = require('http-proxy');
-  // var proxy = httpProxy.createProxyServer({});
-  // app.get('/script.js',function (req,res) {
-  //   proxy.web(req,res,{target: 'http://localhost:8080/'});
-  // });
-  app.use('/style.css',express.static('./public/style.css'));
-  app.use('/script.js',express.static('./public/script.js'));
-  // app.all('/sockjs-node/*',function (req,res) {
-  //   proxy.web(req,res,{target: 'http://localhost:8080/'});
-  // });
+  var httpProxy = require('http-proxy');
+  var proxy = httpProxy.createProxyServer({});
+  app.all('/javascripts/*',function (req,res) {
+    proxy.web(req,res,{target: 'http://localhost:8080/'});
+  });
+  app.all('/sockjs-node/*',function (req,res) {
+    proxy.web(req,res,{target: 'http://localhost:8080/'});
+  });
 }
 
 if (require.main === module) {

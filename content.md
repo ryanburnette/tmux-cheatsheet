@@ -1,6 +1,6 @@
-Hi. I'm Ryan Burnette, and I use tmux in my web development stack. This is my
-cheatsheet containing the commands and options that I use most frequently. I
-refer to other cheatsheets often and those are linked at the bottom.
+Hi. I'm Ryan Burnette, a web developer. Tmux is an integral part of my
+development workflow.  Over time I have compiled this cheatsheet of frequently
+used commands, shortcuts, concepts and other useful ideas related to tmux.
 
 ## What Is tmux?
 

@@ -1,51 +1,5 @@
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    font:inherit;
-    vertical-align:baseline;
-}
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-    display:block;
-}
-body{
-    line-height:1;
-}
-ol,ul{
-    list-style:none;
-}
-blockquote,q{
-    quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-    content:’’;
-    content:none;
-}
-ins{
-    text-decoration:none;
-}
-del{
-    text-decoration:line-through;
-}
-table{
-    border-collapse:collapse;
-    border-spacing:0;
-}
+@import "reset";
+@import "breakpoints";
 
 body {
   background-color: #032b35;
@@ -64,13 +18,22 @@ body {
   color: #fff;
 }
 .main {
-  display: grid;
-  grid-template-columns: 17rem auto;
-  grid-column-gap: 2rem;
+  @include mq($from: tablet) {
+    display: grid;
+    grid-template-columns: 15rem auto;
+    grid-column-gap: 2rem;
+  }
+  @include mq($from: desktop) {
+    grid-template-columns: 18rem auto;
+  }
 }
 .main .nav {
-  position: sticky;
-  top: 2rem;
+  display: none;
+  @include mq($from: tablet) {
+    display: block;
+    position: sticky;
+    top: 2rem;
+  }
 }
 .main .nav .inner {
   border: 1px dashed #849492;

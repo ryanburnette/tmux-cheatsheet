@@ -4,7 +4,8 @@
   "description": "My tmux cheatsheet in the form of a single page website.",
   "main": "app.js",
   "scripts": {
-    "development": "nodemon"
+    "development": "nodemon",
+    "webpack-dev-server": "webpack-dev-server"
   },
   "author": "Ryan Burnette <ryan.burnette@gmail.com>",
   "license": "UNLICENSED",
@@ -16,7 +17,17 @@
     "showdown": "^1.9.0"
   },
   "devDependencies": {
+    "css-loader": "^2.1.0",
     "http-proxy": "^1.17.0",
-    "nodemon": "^1.18.9"
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "sass-loader": "^7.1.0",
+    "sass-mq": "^5.0.0",
+    "smooth-scroll": "^15.0.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   }
 }
