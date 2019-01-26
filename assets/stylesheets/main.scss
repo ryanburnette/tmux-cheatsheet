@@ -1,9 +1,13 @@
 @import "reset";
 @import "breakpoints";
 
+$white: #f0f0f0;
+$gray: #849492;
+$dark-gray: #032b35;
+
 body {
-  background-color: #032b35;
-  color: #849492;
+  background-color: $dark-gray;
+  color: $gray;
   font-family: 'Inconsolata', monospace;
   overflow-x: hidden;
 }
@@ -12,10 +16,10 @@ body {
 }
 .header h1 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
-  margin: 3rem 0;
-  color: #fff;
+  margin: 2rem 0;
+  color: $white;
 }
 .main {
   @include mq($from: tablet) {
@@ -36,14 +40,22 @@ body {
   }
 }
 .main .nav .inner {
-  border: 1px dashed #849492;
+  border: 1px dashed $gray;
 }
 .main .content {
+  padding-top: 2rem;
 }
 .nav a,
 .content a {
-  color: #849492;
+  color: $gray;
   text-decoration: none;
+}
+.content p a {
+  border-bottom: 1px solid $gray;
+}
+.content p a:hover {
+  color: lighten($gray,10);
+  border-color: lighten($gray,10);
 }
 .nav a {
   display: block;
@@ -52,7 +64,7 @@ body {
   padding: 0.5rem 1rem;
 }
 .nav a:hover {
-  color: #bbb;
+  color: lighten($gray,10);
 }
 .nav li:first-child a {
   padding-top: 1rem;
@@ -78,11 +90,11 @@ body {
 }
 .content h2 {
   font-size: 1.7rem;
-  color: #ddd;
+  color: lighten($gray,15);
 }
 .content h3 {
   font-size: 1.4rem;
-  color: #bbb;
+  color: lighten($gray,8);
 }
 .content p,
 .nav a,
@@ -92,6 +104,6 @@ body {
 }
 .content p {
 }
-.content p:first-of-type {
-  margin-top: 3rem;
+.content p code {
+  color: $gray;
 }

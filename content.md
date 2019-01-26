@@ -1,11 +1,33 @@
-Hi. I'm Ryan Burnette, a web developer. Tmux is an integral part of my
-development workflow.  Over time I have compiled this cheatsheet of frequently
-used commands, shortcuts, concepts and other useful ideas related to tmux.
+## About Me
+
+Hi. I'm Ryan Burnette, and from time to time I find myself developing for the
+web in the command-line environment. Tmux is an integral part of my development
+workflow.  Over time I have compiled this cheatsheet of frequently used
+commands, shortcuts, concepts and other useful ideas related to tmux.
 
 ## What Is tmux?
 
-Tmux is a terminal multiplexer. For those familiar with screen, tmux starts
-with that basic functionality and builds upon it.
+Tmux is a terminal multiplexer. If you're familiar with gnu screen, tmux starts
+with the same basic functionality then builds upon it in a very valuable way.
+It gives you the ability to tile terminal panes in the command-line
+environment. Tiling your terminals allows you to interact with multiple
+terminals on a single screen by observing and switching between them.
+
+## Installation
+
+### macOS
+
+The best way to install tmux on macOS is using [homebrew](https://brew.io).
+
+```bash
+brew install tmux
+```
+
+### Ubuntu
+
+```bash
+sudo apt-get install tmux -y
+```
 
 ## Managing Sessions
 
@@ -39,52 +61,102 @@ tmux kill-session -t myname
 
 Note that tab completion works with tmux commands. When used in conjuction with zsh, it can make life easier.
 
-## Commands
+## About Commands
 
-TODO
+### Prefix
 
-## Windows
+Commands are run by first entering your prefix. By default, the prefix is `<crtl+b>`.
 
-A tmux session is made up of one or more windows, sometimes referred to as tabs.
+## Tabs/Windows
+
+A tmux session is made up of one or more tabs, sometimes referred to as
+windows.
 
 ### Create Window
 
 ```bash
-<ctrl> c
+<prefix> c
 ```
 
 ### List Windows
 
 ```bash
-<ctrl> w
+<prefix> w
 ```
 
+### Next Window
+
+```bash
+<prefix> n
 ```
-n  next window
-p  previous window
-f  find window
-,  name window
-&  kill window
+### Previous Window
+
+```bash
+<prefix> p
+```
+
+### Find Window
+
+```bash
+<prefix> f
+```
+
+### Name Window
+
+```bash
+<prefix> ,
+```
+
+### Kill Window
+
+```bash
+<prefix> &
 ```
 
 ## Panes
 
 A tmux tab is made up of one or more panes.
 
-```
-%  vertical split
-"  horizontal split
+### Vertical Split
 
-o  swap panes
-q  show pane numbers
-x  kill pane
-+  break pane into window (e.g. to select text by mouse to copy)
--  restore pane from window
-⍽  space - toggle between layouts
-<prefix> q (Show pane numbers, when the numbers show up type the key to goto that pane)
-<prefix> { (Move the current pane left)
-<prefix> } (Move the current pane right)
-<prefix> z toggle pane zoom
+```bash
+<prefix> %
+```
+
+### Horizontal Split
+
+```bash
+<prefix> "
+```
+
+### Swap Panes
+
+```bash
+<prefix> o
+```
+
+### Show Pane Numbers
+
+```bash
+<prefix> q
+```
+
+### Kill Pane
+
+```bash
+<prefix> x
+```
+
+### Move Pane Left
+
+```bash
+<prefix> {
+```
+
+### Move Pane Right
+
+```bash
+<prefix> }
 ```
 
 ## Pairing
@@ -102,4 +174,10 @@ then runs the following command on the host developer's machine to join.
 
 ## Tmuxinator
 
-TODO
+Tmuxinator is a Ruby Gem that is a helpful companion to tmux. It gives you a
+mechanism for configuring presets to go with your projects.
+
+One of my favorite benefits is that tmuxinator sets the default directory for
+any new tabs or panes to the directory of the project. This saves a minute
+amount of time and frustration for each new tab or pane, but added up over the
+course of many hours of work on the tmux project, it's a huge benefit.
