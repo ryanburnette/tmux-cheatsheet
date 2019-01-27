@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "css-loader": "^2.1.0",
+    "decently-smart-target": "^0.3.7",
     "http-proxy": "^1.17.0",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",

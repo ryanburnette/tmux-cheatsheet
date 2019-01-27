@@ -1,7 +1,7 @@
 ## About Me
 
-Hi. I'm Ryan Burnette, and from time to time I find myself developing for the
-web in the command-line environment. Tmux is an integral part of my development
+Hi. I'm Ryan Burnette. From time to time I find myself developing for the web
+in the command-line environment. Tmux is an integral part of my development
 workflow.  Over time I have compiled this cheatsheet of frequently used
 commands, shortcuts, concepts and other useful ideas related to tmux.
 
